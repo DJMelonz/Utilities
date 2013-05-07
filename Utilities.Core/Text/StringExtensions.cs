@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace System.Utilities.Core.Text
 {
@@ -21,6 +17,11 @@ namespace System.Utilities.Core.Text
         public static bool IsNotEmptyAndEqualTo(this string input, string compare)
         {
             return input.IsNotEmpty() && input == compare;
+        }
+
+        public static bool IsNotEmptyOrEqualTo(this string input, string compare)
+        {
+            return input.IsNotEmpty() && input != compare;
         }
     }
 }

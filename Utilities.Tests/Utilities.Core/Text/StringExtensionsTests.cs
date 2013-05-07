@@ -87,5 +87,37 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             // Assert
             Assert.IsTrue(isNotEmpty, "String was not empty and equal to \"Test String\".");
         }
+
+        [Test]
+        public void EmptyString_IsNotEmptyOrEqualTo_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            bool isEmpty = emptyString.IsNotEmptyOrEqualTo("Test String");
+            bool isEmptyWithNoEqualValue = emptyString.IsNotEmptyOrEqualTo("");
+            bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyOrEqualTo(null);
+
+            // Assert
+            Assert.IsFalse(isEmpty, "String was empty and not equal to \"Test String\".");
+            Assert.IsFalse(isEmptyWithNoEqualValue, "String was empty and not equal to empty string.");
+            Assert.IsFalse(isEmptyWithNullEqualValue, "String was empty.");
+        }
+
+        [Test]
+        public void EmptyString_IsNotEmptyOrEqualTo_ReturnsTrue()
+        {
+            // Arrange
+            string nonEmptyString = "Test String";
+
+            // Act
+            bool isNotEmptyWithMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo("Test String");
+            bool isNotEmptyWithNonMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo("Non Matching Test String");
+
+            // Assert
+            Assert.IsFalse(isNotEmptyWithMatchingValue, "String was not empty and equal to \"Test String\".");
+            Assert.IsTrue(isNotEmptyWithNonMatchingValue, "String was not empty and not equal to \"Test String\".");
+        }
     }
 }
