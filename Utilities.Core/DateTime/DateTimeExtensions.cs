@@ -10,5 +10,10 @@ namespace System.Utilities.Core.DateTime
             System.DateTime monday = input.AddDays(delta);
             return new System.DateTime(monday.Year, monday.Month, monday.Day);
         }
+
+        public static System.DateTime FirstDayOfMonth(this System.DateTime input)
+        {
+            return new System.DateTime(input.Year, input.Month, 1);
+        }
     }
 }
