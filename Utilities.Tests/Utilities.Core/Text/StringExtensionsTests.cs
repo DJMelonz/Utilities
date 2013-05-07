@@ -1,7 +1,7 @@
 ﻿using System.Utilities.Core.Text;
 using NUnit.Framework;
 
-namespace System.Utilities.Tests.Utilities.Core
+namespace System.Utilities.Tests.Utilities.Core.Text
 {
     [TestFixture]
     public class StringExtensionsTests
