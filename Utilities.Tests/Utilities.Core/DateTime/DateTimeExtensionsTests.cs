@@ -33,5 +33,19 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
             Assert.AreEqual(DayOfWeek.Tuesday, result.DayOfWeek);
             Assert.AreEqual(new System.DateTime(2013, 1, 1), result);
         }
+
+        [Test]
+        public void DateTime_LastDayOfMonth_ReturnsDateTime()
+        {
+            // Arrange
+            System.DateTime date = new System.DateTime(2013, 1, 15);
+
+            // Act
+            System.DateTime result = date.LastDayOfMonth();
+
+            // Assert
+            Assert.AreEqual(DayOfWeek.Thursday, result.DayOfWeek);
+            Assert.AreEqual(new System.DateTime(2013, 1, 31), result);
+        }
     }
 }

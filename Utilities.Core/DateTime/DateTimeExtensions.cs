@@ -15,5 +15,11 @@ namespace System.Utilities.Core.DateTime
         {
             return new System.DateTime(input.Year, input.Month, 1);
         }
+
+        public static System.DateTime LastDayOfMonth(this System.DateTime input)
+        {
+            System.DateTime firstDayOfTheMonth = input.FirstDayOfMonth();
+            return firstDayOfTheMonth.AddMonths(1).AddDays(-1);
+        }
     }
 }
