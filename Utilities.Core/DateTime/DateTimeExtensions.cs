@@ -21,5 +21,15 @@ namespace System.Utilities.Core.DateTime
             System.DateTime firstDayOfTheMonth = input.FirstDayOfMonth();
             return firstDayOfTheMonth.AddMonths(1).AddDays(-1);
         }
+
+        /// <summary>
+        /// Convert DateTime into ISO8601 format.
+        /// </summary>
+        /// <param name="input">DateTime object.</param>
+        /// <returns></returns>
+        public static string ToIso8601(this System.DateTime input)
+        {
+            return input.ToString("yyyy-MM-ddTHH:mm:ssz");
+        }
     }
 }

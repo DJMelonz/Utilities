@@ -47,5 +47,18 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
             Assert.AreEqual(DayOfWeek.Thursday, result.DayOfWeek);
             Assert.AreEqual(new System.DateTime(2013, 1, 31), result);
         }
+
+        [Test]
+        public void DateTime_ToIso8601_ReturnsString()
+        {
+            // Arrange
+            System.DateTime date = new System.DateTime(2013, 1, 15, 23, 59, 01);
+
+            // Act
+            string iso8601Date = date.ToIso8601();
+
+            // Assert
+            Assert.AreEqual("2013-01-15T23:59:01+0", iso8601Date);
+        }
     }
 }

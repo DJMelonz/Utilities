@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTime\BusinessHours.cs" />
     <Compile Include="DateTime\DateTimeExtensions.cs" />
     <Compile Include="IO\FileExtensions.cs" />
     <Compile Include="IO\FileUtils.cs" />
