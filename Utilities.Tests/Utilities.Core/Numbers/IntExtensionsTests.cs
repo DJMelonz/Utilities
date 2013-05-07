@@ -33,7 +33,7 @@ namespace System.Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void IntWithValue_IsNullOrZero_ReturnsTrue()
+        public void IntWithValue_IsNullOrZero_ReturnsFalse()
         {
             // Arrange
             int? nonNullInt = 1;
