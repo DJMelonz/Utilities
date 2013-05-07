@@ -18,8 +18,8 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool nullStringIsEmpty = nullString.IsEmpty();
 
             // Assert
-            Assert.IsTrue(isEmpty, "String was empty.");
-            Assert.IsTrue(nullStringIsEmpty, "String was null.");
+            Assert.IsTrue(isEmpty);
+            Assert.IsTrue(nullStringIsEmpty);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isNotEmpty = nonEmptyString.IsEmpty();
 
             // Assert
-            Assert.IsFalse(isNotEmpty, "String was not empty.");
+            Assert.IsFalse(isNotEmpty);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isEmpty = emptyString.IsNotEmpty();
 
             // Assert
-            Assert.IsFalse(isEmpty, "String was empty.");
+            Assert.IsFalse(isEmpty);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isNotEmpty = nonEmptyString.IsNotEmpty();
 
             // Assert
-            Assert.IsTrue(isNotEmpty, "String was not empty.");
+            Assert.IsTrue(isNotEmpty);
         }
 
         [Test]
@@ -73,9 +73,9 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyAndEqualTo(null);
 
             // Assert
-            Assert.IsFalse(isEmpty, "String was empty and not equal to \"Test String\".");
-            Assert.IsFalse(isEmptyWithNoEqualValue, "String was empty and not equal to empty string.");
-            Assert.IsFalse(isEmptyWithNullEqualValue, "String was empty.");
+            Assert.IsFalse(isEmpty);
+            Assert.IsFalse(isEmptyWithNoEqualValue);
+            Assert.IsFalse(isEmptyWithNullEqualValue);
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isNotEmpty = nonEmptyString.IsNotEmptyAndEqualTo("Test String");
 
             // Assert
-            Assert.IsTrue(isNotEmpty, "String was not empty and equal to \"Test String\".");
+            Assert.IsTrue(isNotEmpty);
         }
 
         [Test]
@@ -103,9 +103,9 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyOrEqualTo(null);
 
             // Assert
-            Assert.IsFalse(isEmpty, "String was empty and not equal to \"Test String\".");
-            Assert.IsFalse(isEmptyWithNoEqualValue, "String was empty and not equal to empty string.");
-            Assert.IsFalse(isEmptyWithNullEqualValue, "String was empty.");
+            Assert.IsFalse(isEmpty);
+            Assert.IsFalse(isEmptyWithNoEqualValue);
+            Assert.IsFalse(isEmptyWithNullEqualValue);
         }
 
         [Test]
@@ -119,8 +119,62 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isNotEmptyWithNonMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo("Non Matching Test String");
 
             // Assert
-            Assert.IsFalse(isNotEmptyWithMatchingValue, "String was not empty and equal to \"Test String\".");
-            Assert.IsTrue(isNotEmptyWithNonMatchingValue, "String was not empty and not equal to \"Test String\".");
+            Assert.IsFalse(isNotEmptyWithMatchingValue);
+            Assert.IsTrue(isNotEmptyWithNonMatchingValue);
+        }
+
+        [Test]
+        public void EmptyString_Truncate_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string truncated = emptyString.Truncate();
+
+            // Assert
+            Assert.AreEqual(string.Empty, truncated);
+        }
+
+        [Test]
+        public void NullString_Truncate_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = null;
+
+            // Act
+            string truncated = emptyString.Truncate();
+
+            // Assert
+            Assert.AreEqual(string.Empty, truncated);
+        }
+
+        [Test]
+        public void NonEmptyString_Truncate_ReturnsEmptyString()
+        {
+            // Arrange
+            string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
+
+            // Act
+            string truncated = stringToTruncate.Truncate();
+
+            // Assert
+            Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, mas ...", truncated);
+            Assert.AreEqual(79, truncated.Length);
+        }
+
+        [Test]
+        public void NonEmptyString_TruncateWithLength_ReturnsEmptyString()
+        {
+            // Arrange
+            string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
+
+            // Act
+            string truncated = stringToTruncate.Truncate(100);
+
+            // Assert
+            Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, li ...", truncated);
+            Assert.AreEqual(104, truncated.Length);
         }
     }
 }

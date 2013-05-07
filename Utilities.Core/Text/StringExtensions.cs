@@ -23,5 +23,18 @@ namespace System.Utilities.Core.Text
         {
             return input.IsNotEmpty() && input != compare;
         }
+
+        public static string Truncate(this string input, int length = 75)
+        {
+            if (input.IsNotEmpty())
+            {
+                if (input.Length >= length)
+                {
+                    return string.Format("{0} ...", input.Substring(0, length));
+                }
+                return input;
+            }
+            return string.Empty;
+        }
     }
 }
