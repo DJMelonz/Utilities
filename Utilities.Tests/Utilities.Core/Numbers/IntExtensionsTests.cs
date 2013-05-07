@@ -44,5 +44,44 @@ namespace System.Utilities.Tests.Utilities.Core.Numbers
             // Assert
             Assert.IsFalse(intIsNotNullOrZero);
         }
+
+        [Test]
+        public void ZeroInt_IsNotNullOrZero_ReturnsFalse()
+        {
+            // Arrange
+            int? nullInt = 0;
+
+            // Act
+            bool intIsZero = nullInt.IsNotNullOrZero();
+
+            // Assert
+            Assert.IsFalse(intIsZero);
+        }
+
+        [Test]
+        public void NullInt_IsNotNullOrZero_ReturnsFalse()
+        {
+            // Arrange
+            int? nullInt = null;
+
+            // Act
+            bool intIsNull = nullInt.IsNotNullOrZero();
+
+            // Assert
+            Assert.IsFalse(intIsNull);
+        }
+
+        [Test]
+        public void IntWithValue_IsNotNullOrZero_ReturnsTrue()
+        {
+            // Arrange
+            int? nonNullInt = 1;
+
+            // Act
+            bool intIsNotNullOrZero = nonNullInt.IsNotNullOrZero();
+
+            // Assert
+            Assert.IsTrue(intIsNotNullOrZero);
+        }
     }
 }
