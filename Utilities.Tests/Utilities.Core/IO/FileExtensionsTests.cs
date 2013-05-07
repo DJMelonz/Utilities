@@ -109,5 +109,58 @@ namespace System.Utilities.Tests.Utilities.Core.IO
             // Assert
             Assert.AreEqual("text/plain", mimeType);
         }
+
+        [Test]
+        public void EmptyString_GenerateGuidFileName_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string fileName = emptyString.GenerateGuidFileName();
+
+            // Assert
+            Assert.AreEqual(string.Empty, fileName);
+        }
+
+        [Test]
+        public void NullString_GenerateGuidFileName_ReturnsEmptyString()
+        {
+            // Arrange
+            string nullString = null;
+
+            // Act
+            string fileName = nullString.GenerateGuidFileName();
+
+            // Assert
+            Assert.AreEqual(string.Empty, fileName);
+        }
+
+        [Test]
+        public void StringWithInvalidFileName_GenerateGuidFileName_ReturnsEmptyString()
+        {
+            // Arrange
+            string invalidFilename = "test-filename.";
+
+            // Act
+            string fileName = invalidFilename.GenerateGuidFileName();
+
+            // Assert
+            Assert.AreEqual(string.Empty, fileName);
+        }
+
+        [Test]
+        public void StringWithValidFileName_GenerateGuidFileName_ReturnsFileName()
+        {
+            // Arrange
+            string filename = "test-filename.txt";
+
+            // Act
+            string generatedFileName = filename.GenerateGuidFileName();
+
+            // Assert
+            Assert.IsNotNullOrEmpty(generatedFileName);
+            Assert.IsFalse(generatedFileName.Contains(filename));
+        }
     }
 }
