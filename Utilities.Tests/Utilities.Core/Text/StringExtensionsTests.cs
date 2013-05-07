@@ -79,7 +79,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void EmptyString_IsNotEmptyAndEqualTo_ReturnsTrue()
+        public void NonEmptyString_IsNotEmptyAndEqualTo_ReturnsTrue()
         {
             // Arrange
             string nonEmptyString = "Test String";
@@ -109,7 +109,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void EmptyString_IsNotEmptyOrEqualTo_ReturnsTrue()
+        public void NonEmptyString_IsNotEmptyOrEqualTo_ReturnsTrue()
         {
             // Arrange
             string nonEmptyString = "Test String";
