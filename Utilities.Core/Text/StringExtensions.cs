@@ -17,5 +17,10 @@ namespace System.Utilities.Core.Text
         {
             return !string.IsNullOrEmpty(input);
         }
+
+        public static bool IsNotEmptyAndEqualTo(this string input, string compare)
+        {
+            return input.IsNotEmpty() && input == compare;
+        }
     }
 }
