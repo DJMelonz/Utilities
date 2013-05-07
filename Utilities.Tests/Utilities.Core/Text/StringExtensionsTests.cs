@@ -11,14 +11,23 @@ namespace System.Utilities.Tests.Utilities.Core.Text
         {
             // Arrange
             string emptyString = "";
-            string nullString = null;
 
             // Act
             bool isEmpty = emptyString.IsEmpty();
-            bool nullStringIsEmpty = nullString.IsEmpty();
 
             // Assert
             Assert.IsTrue(isEmpty);
+        }
+        [Test]
+        public void NullString_IsEmpty_ReturnsTrue()
+        {
+            // Arrange
+            string nullString = null;
+
+            // Act
+            bool nullStringIsEmpty = nullString.IsEmpty();
+
+            // Assert
             Assert.IsTrue(nullStringIsEmpty);
         }
 
