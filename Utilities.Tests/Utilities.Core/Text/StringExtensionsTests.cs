@@ -7,7 +7,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
     public class StringExtensionsTests
     {
         [Test]
-        public void EmptyString_IsEmpty_ReturnsFalse()
+        public void EmptyString_IsEmpty_ReturnsTrue()
         {
             // Arrange
             string emptyString = "";
@@ -16,7 +16,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isEmpty = emptyString.IsEmpty();
 
             // Assert
-            Assert.IsTrue(isEmpty, "String was empty");
+            Assert.IsTrue(isEmpty, "String was empty.");
         }
 
         [Test]
@@ -29,7 +29,32 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             bool isNotEmpty = nonEmptyString.IsEmpty();
 
             // Assert
-            Assert.IsFalse(isNotEmpty, "String was not empty");
+            Assert.IsFalse(isNotEmpty, "String was not empty.");
+        }
+        [Test]
+        public void EmptyString_IsNotEmpty_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            bool isEmpty = emptyString.IsNotEmpty();
+
+            // Assert
+            Assert.IsFalse(isEmpty, "String was empty.");
+        }
+
+        [Test]
+        public void NonEmptyString_IsNotEmpty_ReturnsTrue()
+        {
+            // Arrange
+            string nonEmptyString = "Test String";
+
+            // Act
+            bool isNotEmpty = nonEmptyString.IsNotEmpty();
+
+            // Assert
+            Assert.IsTrue(isNotEmpty, "String was not empty.");
         }
     }
 }
