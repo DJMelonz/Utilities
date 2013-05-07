@@ -33,6 +33,19 @@ namespace System.Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
+        public void StringWithInvalidFileName_GetExtension_ReturnsEmptyString()
+        {
+            // Arrange
+            string invalidFilename = "test-filename.";
+
+            // Act
+            string extension = invalidFilename.GetExtension();
+
+            // Assert
+            Assert.AreEqual(string.Empty, extension);
+        }
+
+        [Test]
         public void StringWithValidFileName_GetExtension_ReturnsExtension()
         {
             // Arrange
@@ -46,16 +59,55 @@ namespace System.Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithInvalidFileName_GetExtension_ReturnsEmptyString()
+        public void EmptyString_MimeType_ReturnsUnknownMimeType()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string mimeType = emptyString.MimeType();
+
+            // Assert
+            Assert.AreEqual("unknown/unknown", mimeType);
+        }
+
+        [Test]
+        public void NullString_MimeType_ReturnsUnknownMimeType()
+        {
+            // Arrange
+            string nullString = null;
+
+            // Act
+            string mimeType = nullString.MimeType();
+
+            // Assert
+            Assert.AreEqual("unknown/unknown", mimeType);
+        }
+
+        [Test]
+        public void StringWithInvalidFileName_MimeType_ReturnsUnknownMimeType()
         {
             // Arrange
             string invalidFilename = "test-filename.";
 
             // Act
-            string extension = invalidFilename.GetExtension();
+            string mimeType = invalidFilename.MimeType();
 
             // Assert
-            Assert.AreEqual(string.Empty, extension);
+            Assert.AreEqual("unknown/unknown", mimeType);
+        }
+
+        [Test]
+        public void StringWithValidFileName_MimeType_ReturnsMimeType()
+        {
+            // Arrange
+            string filename = "test-filename.txt";
+
+            // Act
+            string mimeType = filename.MimeType();
+
+            // Assert
+            Assert.AreEqual("text/plain", mimeType);
         }
     }
 }

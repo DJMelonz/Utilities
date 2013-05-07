@@ -9,5 +9,10 @@ namespace System.Utilities.Core.IO
             var extension = Path.GetExtension(input);
             return !string.IsNullOrEmpty(extension) ? extension.Remove(0, 1).ToLower() : string.Empty;
         }
+
+        public static string MimeType(this string input)
+        {
+            return FileUtils.GetMimeType(input);
+        }
     }
 }
