@@ -31,5 +31,15 @@ namespace System.Utilities.Core.DateTime
         {
             return input.ToString("yyyy-MM-ddTHH:mm:ssz");
         }
+
+        public static TimeSpan BusinessHoursSince(this System.DateTime input)
+        {
+            return new BusinessHours().Calculate(input, System.DateTime.Now);
+        }
+
+        public static TimeSpan BusinessHoursBetween(this System.DateTime startDate, System.DateTime endDate)
+        {
+            return new BusinessHours().Calculate(startDate, endDate);
+        }
     }
 }
