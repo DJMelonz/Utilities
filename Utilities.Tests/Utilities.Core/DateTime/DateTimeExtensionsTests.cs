@@ -75,7 +75,7 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void DateTimeOutOfBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void DateTimeOutOfBusinessHours_BusinessHoursBetween_ReturnsTimeSpanZero()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 21, 0, 0);
