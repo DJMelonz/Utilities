@@ -89,7 +89,7 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void DateTimeStartTimeBeforeBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void StartDateTimeBeforeBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 21, 0, 0);
@@ -103,7 +103,7 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void DateTimeEndTimeAfterBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void EndDateTimeAfterBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 17, 0, 0);
