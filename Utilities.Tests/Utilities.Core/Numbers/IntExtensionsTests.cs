@@ -1,7 +1,7 @@
-﻿using System.Utilities.Core.Numbers;
+﻿using Utilities.Core.Numbers;
 using NUnit.Framework;
 
-namespace System.Utilities.Tests.Utilities.Core.Numbers
+namespace Utilities.Tests.Utilities.Core.Numbers
 {
     [TestFixture]
     public class IntExtensionsTests

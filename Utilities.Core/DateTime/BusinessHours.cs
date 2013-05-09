@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
-namespace System.Utilities.Core.DateTime
+namespace Utilities.Core.DateTime
 {
     public class BusinessHours
     {

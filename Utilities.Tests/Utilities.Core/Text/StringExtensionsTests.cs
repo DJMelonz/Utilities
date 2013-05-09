@@ -1,7 +1,7 @@
-﻿using System.Utilities.Core.Text;
+﻿using Utilities.Core.Text;
 using NUnit.Framework;
 
-namespace System.Utilities.Tests.Utilities.Core.Text
+namespace Utilities.Tests.Utilities.Core.Text
 {
     [TestFixture]
     public class StringExtensionsTests
@@ -18,6 +18,7 @@ namespace System.Utilities.Tests.Utilities.Core.Text
             // Assert
             Assert.IsTrue(isEmpty);
         }
+
         [Test]
         public void NullString_IsEmpty_ReturnsTrue()
         {

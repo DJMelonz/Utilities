@@ -6,7 +6,7 @@
     <ProjectGuid>{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System.Utilities.Tests</RootNamespace>
+    <RootNamespace>Utilities.Tests</RootNamespace>
     <AssemblyName>Utilities.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -58,6 +58,7 @@
     <Compile Include="Utilities.Core\IO\FileExtensionsTests.cs" />
     <Compile Include="Utilities.Core\Numbers\IntExtensionsTests.cs" />
     <Compile Include="Utilities.Core\Text\StringExtensionsTests.cs" />
+    <Compile Include="Utilities.Web\Email\EmailExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,7 +68,12 @@
       <Project>{7ECD054B-C1AD-4940-B9EE-35146729C52F}</Project>
       <Name>Utilities.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities.Web\Utilities.Web.csproj">
+      <Project>{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}</Project>
+      <Name>Utilities.Web</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

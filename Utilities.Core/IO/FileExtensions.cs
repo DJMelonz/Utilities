@@ -1,7 +1,8 @@
-﻿using System.IO;
-using System.Utilities.Core.Text;
+﻿using System;
+using System.IO;
+using Utilities.Core.Text;
 
-namespace System.Utilities.Core.IO
+namespace Utilities.Core.IO
 {
     public static class FileExtensions
     {

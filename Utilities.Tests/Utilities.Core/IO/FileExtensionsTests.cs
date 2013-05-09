@@ -1,7 +1,7 @@
-﻿using System.Utilities.Core.IO;
+﻿using Utilities.Core.IO;
 using NUnit.Framework;
 
-namespace System.Utilities.Tests.Utilities.Core.IO
+namespace Utilities.Tests.Utilities.Core.IO
 {
     [TestFixture]
     public class FileExtensionsTests

@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Core", "Utilities
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Tests", "Utilities.Tests\Utilities.Tests.csproj", "{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Web", "Utilities.Web\Utilities.Web.csproj", "{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{66083CE5-9ACD-444E-982F-E4EEE6C2026C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7BB329E2-ABBD-4F86-9E35-EDBC3B46FF9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,8 +25,17 @@ Global
 		{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7ECD054B-C1AD-4940-B9EE-35146729C52F} = {66083CE5-9ACD-444E-982F-E4EEE6C2026C}
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8} = {66083CE5-9ACD-444E-982F-E4EEE6C2026C}
+		{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C} = {7BB329E2-ABBD-4F86-9E35-EDBC3B46FF9B}
 	EndGlobalSection
 EndGlobal

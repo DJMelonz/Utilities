@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace System.Utilities.Core.Numbers
+namespace Utilities.Core.Numbers
 {
     public static class IntExtensions
     {

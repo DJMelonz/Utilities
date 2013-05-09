@@ -1,7 +1,8 @@
-﻿using System.Utilities.Core.DateTime;
+﻿using System;
+using Utilities.Core.DateTime;
 using NUnit.Framework;
 
-namespace System.Utilities.Tests.Utilities.Core.DateTime
+namespace Utilities.Tests.Utilities.Core.DateTime
 {
     [TestFixture]
     public class DateTimeExtensionsTests
@@ -73,7 +74,7 @@ namespace System.Utilities.Tests.Utilities.Core.DateTime
             // Assert
             Assert.IsNotNull(hoursSince);
         }
-
+         
         [Test]
         public void DateTimeOutOfBusinessHours_BusinessHoursBetween_ReturnsTimeSpanZero()
         {

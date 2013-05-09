@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace System.Utilities.Core.IO
+namespace Utilities.Core.IO
 {
     public class FileUtils
     {
