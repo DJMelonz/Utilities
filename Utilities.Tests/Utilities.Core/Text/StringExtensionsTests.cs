@@ -1,4 +1,5 @@
-﻿using Utilities.Core.Text;
+﻿using System;
+using Utilities.Core.Text;
 using NUnit.Framework;
 
 namespace Utilities.Tests.Utilities.Core.Text
@@ -185,6 +186,85 @@ namespace Utilities.Tests.Utilities.Core.Text
             // Assert
             Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, li ...", truncated);
             Assert.AreEqual(104, truncated.Length);
+        }
+
+        [Test]
+        public void EmptyStringPassingEmptyString_With_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string result = emptyString.With("");
+
+            // Assert
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [Test]
+        public void NullStringPassingNonEmptyString_With_ThrowsArgumentNullException()
+        {
+            // Arrange
+            string nullString = null;
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => nullString.With("value1", "value2"));
+        }
+
+        [Test]
+        public void StringPassingNullString_With_ThrowsArgumentNullException()
+        {
+            // Arrange
+            string validString = "Sphinx of black {0}, judge my {1}.";
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => validString.With(null));
+        }
+
+        [Test]
+        public void EmptyStringPassingArguments_With_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string result = emptyString.With("value1", "value2");
+
+            // Assert
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [Test]
+        public void StringPassingNoArguments_With_ThrowsFormatException()
+        {
+            // Arrange
+            string validString = "Sphinx of black {0}, judge my {1}.";
+
+            // Act & Assert
+            Assert.Throws<FormatException>(() => validString.With());
+        }
+
+        [Test]
+        public void StringPassingIncorrectNumberOfArguments_With_ThrowsFormatException()
+        {
+            // Arrange
+            string validString = "Sphinx of black {0}, judge my {1}.";
+
+            // Act & Assert
+            Assert.Throws<FormatException>(() => validString.With("quartz"));
+        }
+
+        [Test]
+        public void StringPassingCorrectNumberOfArguments_With_ReturnsString()
+        {
+            // Arrange
+            string validString = "Sphinx of black {0}, judge my {1}.";
+
+            // Act
+            string result = validString.With("quartz", "vow");
+
+            // Assert
+            Assert.AreEqual("Sphinx of black quartz, judge my vow.", result);
         }
     }
 }

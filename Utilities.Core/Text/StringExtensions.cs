@@ -36,5 +36,10 @@ namespace Utilities.Core.Text
             }
             return string.Empty;
         }
+
+        public static string With(this string input, params string[] stringParams)
+        {
+            return string.Format(input, stringParams);
+        }
     }
 }
