@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.Core\DateTime\DateTimeExtensionsTests.cs" />
     <Compile Include="Utilities.Core\IO\FileExtensionsTests.cs" />
+    <Compile Include="Utilities.Core\Numbers\PercentageExtensionsTests.cs" />
     <Compile Include="Utilities.Core\Numbers\IntExtensionsTests.cs" />
     <Compile Include="Utilities.Core\Text\StringExtensionsTests.cs" />
     <Compile Include="Utilities.Web\Email\EmailExtensionsTests.cs" />
