@@ -37,9 +37,9 @@ namespace Utilities.Core.Text
             return string.Empty;
         }
 
-        public static string With(this string input, params string[] stringParams)
+        public static string With(this string input, params object[] args)
         {
-            return string.Format(input, stringParams);
+            return string.Format(input, args);
         }
     }
 }
