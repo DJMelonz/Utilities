@@ -144,20 +144,20 @@ namespace Utilities.Tests.Utilities.Core.Text
             string truncated = emptyString.Truncate();
 
             // Assert
-            Assert.AreEqual(string.Empty, truncated);
+            Assert.AreEqual("", truncated);
         }
 
         [Test]
         public void NullString_Truncate_ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = null;
+            string nullString = null;
 
             // Act
-            string truncated = emptyString.Truncate();
+            string truncated = nullString.Truncate();
 
             // Assert
-            Assert.AreEqual(string.Empty, truncated);
+            Assert.AreEqual("", truncated);
         }
 
         [Test]
@@ -198,7 +198,7 @@ namespace Utilities.Tests.Utilities.Core.Text
             string result = emptyString.With("");
 
             // Assert
-            Assert.AreEqual(string.Empty, result);
+            Assert.AreEqual("", result);
         }
 
         [Test]
@@ -231,7 +231,7 @@ namespace Utilities.Tests.Utilities.Core.Text
             string result = emptyString.With("value1", "value2");
 
             // Assert
-            Assert.AreEqual(string.Empty, result);
+            Assert.AreEqual("", result);
         }
 
         [Test]
