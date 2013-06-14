@@ -266,5 +266,85 @@ namespace Utilities.Tests.Utilities.Core.Text
             // Assert
             Assert.AreEqual("Sphinx of black quartz, judge my vow.", result);
         }
+
+        [Test]
+        public void EmptyString_ToSlug_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = "";
+
+            // Act
+            string result = emptyString.ToSlug();
+
+            // Assert
+            Assert.AreEqual("", result);
+        }
+
+        [Test]
+        public void NullString_ToSlug_ReturnsEmptyString()
+        {
+            // Arrange
+            string nullString = null;
+
+            // Act
+            string result = nullString.ToSlug();
+
+            // Assert
+            Assert.AreEqual("", result);
+        }
+
+        [Test]
+        public void StringWithPunctuation_ToSlug_ReturnsFormattedString()
+        {
+            // Arrange
+            string punctuatedString = "Sphinx of black quartz, judge my vow.";
+
+            // Act
+            string result = punctuatedString.ToSlug();
+
+            // Assert
+            Assert.AreEqual("sphinx-of-black-quartz-judge-my-vow", result);
+        }
+
+        [Test]
+        public void StringWithExcessiveDashes_ToSlug_ReturnsFormattedString()
+        {
+            // Arrange
+            string excessivelyDashedString = "Sphinx - of -- black quartz, --- judge my vow.-";
+
+            // Act
+            string result = excessivelyDashedString.ToSlug();
+
+            // Assert
+            Assert.AreEqual("sphinx-of-black-quartz-judge-my-vow", result);
+        }
+
+        [Test]
+        public void StringWithPunctuationAndTruncateValue_ToSlug_ReturnsTruncatedFormattedString()
+        {
+            // Arrange
+            string punctuatedString = "Sphinx of black quartz, judge my vow.";
+
+            // Act
+            string result = punctuatedString.ToSlug(15);
+
+            // Assert
+            Assert.AreEqual("sphinx-of-black", result);
+            Assert.AreEqual(15, result.Length);
+        }
+
+        [Test]
+        public void StringWithPunctuationAndTruncateValueEndingOnDash_ToSlug_ReturnsTruncatedFormattedString()
+        {
+            // Arrange
+            string punctuatedString = "Sphinx of black quartz, judge my vow.";
+
+            // Act
+            string result = punctuatedString.ToSlug(16);
+
+            // Assert
+            Assert.AreEqual("sphinx-of-black", result);
+            Assert.AreEqual(15, result.Length);
+        }
     }
 }
