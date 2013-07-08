@@ -161,7 +161,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void NonEmptyString_Truncate_ReturnsEmptyString()
+        public void NonEmptyString_Truncate_ReturnsTruncatedString()
         {
             // Arrange
             string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
@@ -175,7 +175,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void NonEmptyString_TruncateWithLength_ReturnsEmptyString()
+        public void NonEmptyString_TruncateWithLength_ReturnsTruncatedString()
         {
             // Arrange
             string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
@@ -334,7 +334,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void StringWithPunctuationAndTruncateValueEndingOnDash_ToSlug_ReturnsTruncatedFormattedString()
+        public void StringWithPunctuationAndTruncateValueEndingOnSpace_ToSlug_ReturnsTruncatedFormattedString()
         {
             // Arrange
             string punctuatedString = "Sphinx of black quartz, judge my vow.";
