@@ -1,87 +1,95 @@
-﻿using Utilities.Core.Numbers;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace Utilities.Tests.Utilities.Core.Numbers
+namespace Utilities.Core.Numbers.Tests
 {
-    [TestFixture]
+    [TestFixture, Explicit]
+    [Category("Integer Extension Methods")]
     public class IntExtensionsTests
     {
-        [Test]
-        public void IsNullOrZero_ZeroInt_ReturnsTrue()
+        [TestFixture]
+        public class IsNullOrZero
         {
-            // Arrange
-            int? nullInt = 0;
+            [Test]
+            public void IsNullOrZero_ZeroInt_ReturnsTrue()
+            {
+                // Arrange
+                int? nullInt = 0;
 
-            // Act
-            bool intIsZero = nullInt.IsNullOrZero();
+                // Act
+                bool intIsZero = nullInt.IsNullOrZero();
 
-            // Assert
-            Assert.IsTrue(intIsZero);
+                // Assert
+                Assert.IsTrue(intIsZero);
+            }
+
+            [Test]
+            public void IsNullOrZero_NullInt_ReturnsTrue()
+            {
+                // Arrange
+                int? nullInt = null;
+
+                // Act
+                bool intIsNull = nullInt.IsNullOrZero();
+
+                // Assert
+                Assert.IsTrue(intIsNull);
+            }
+
+            [Test]
+            public void IsNullOrZero_IntWithValue_ReturnsFalse()
+            {
+                // Arrange
+                int? nonNullInt = 1;
+
+                // Act
+                bool intIsNotNullOrZero = nonNullInt.IsNullOrZero();
+
+                // Assert
+                Assert.IsFalse(intIsNotNullOrZero);
+            }
         }
 
-        [Test]
-        public void IsNullOrZero_NullInt_ReturnsTrue()
+        [TestFixture]
+        public class IsNotNullOrZero
         {
-            // Arrange
-            int? nullInt = null;
+            [Test]
+            public void IsNotNullOrZero_ZeroInt_ReturnsFalse()
+            {
+                // Arrange
+                int? nullInt = 0;
 
-            // Act
-            bool intIsNull = nullInt.IsNullOrZero();
+                // Act
+                bool intIsZero = nullInt.IsNotNullOrZero();
 
-            // Assert
-            Assert.IsTrue(intIsNull);
-        }
+                // Assert
+                Assert.IsFalse(intIsZero);
+            }
 
-        [Test]
-        public void IsNullOrZero_IntWithValue_ReturnsFalse()
-        {
-            // Arrange
-            int? nonNullInt = 1;
+            [Test]
+            public void IsNotNullOrZero_NullInt_ReturnsFalse()
+            {
+                // Arrange
+                int? nullInt = null;
 
-            // Act
-            bool intIsNotNullOrZero = nonNullInt.IsNullOrZero();
+                // Act
+                bool intIsNull = nullInt.IsNotNullOrZero();
 
-            // Assert
-            Assert.IsFalse(intIsNotNullOrZero);
-        }
+                // Assert
+                Assert.IsFalse(intIsNull);
+            }
 
-        [Test]
-        public void IsNotNullOrZero_ZeroInt_ReturnsFalse()
-        {
-            // Arrange
-            int? nullInt = 0;
+            [Test]
+            public void IsNotNullOrZero_IntWithValue_ReturnsTrue()
+            {
+                // Arrange
+                int? nonNullInt = 1;
 
-            // Act
-            bool intIsZero = nullInt.IsNotNullOrZero();
+                // Act
+                bool intIsNotNullOrZero = nonNullInt.IsNotNullOrZero();
 
-            // Assert
-            Assert.IsFalse(intIsZero);
-        }
-
-        [Test]
-        public void IsNotNullOrZero_NullInt_ReturnsFalse()
-        {
-            // Arrange
-            int? nullInt = null;
-
-            // Act
-            bool intIsNull = nullInt.IsNotNullOrZero();
-
-            // Assert
-            Assert.IsFalse(intIsNull);
-        }
-
-        [Test]
-        public void IsNotNullOrZero_IntWithValue_ReturnsTrue()
-        {
-            // Arrange
-            int? nonNullInt = 1;
-
-            // Act
-            bool intIsNotNullOrZero = nonNullInt.IsNotNullOrZero();
-
-            // Assert
-            Assert.IsTrue(intIsNotNullOrZero);
+                // Assert
+                Assert.IsTrue(intIsNotNullOrZero);
+            }
         }
     }
 }
