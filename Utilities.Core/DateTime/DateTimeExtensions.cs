@@ -8,6 +8,7 @@ namespace Utilities.Core.DateTime
         {
             int delta = DayOfWeek.Monday - input.DayOfWeek;
             System.DateTime monday = input.AddDays(delta);
+
             return new System.DateTime(monday.Year, monday.Month, monday.Day);
         }
 
@@ -19,6 +20,7 @@ namespace Utilities.Core.DateTime
         public static System.DateTime LastDayOfMonth(this System.DateTime input)
         {
             System.DateTime firstDayOfTheMonth = input.FirstDayOfMonth();
+
             return firstDayOfTheMonth.AddMonths(1).AddDays(-1);
         }
 
