@@ -7,10 +7,10 @@ namespace Utilities.Tests.Utilities.Core.IO
     public class FileExtensionsTests
     {
         [Test]
-        public void EmptyString_GetExtension_ReturnsEmptyString()
+        public void GetExtension_EmptyString_ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             string extension = emptyString.GetExtension();
@@ -20,7 +20,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void NullString_GetExtension_ReturnsEmptyString()
+        public void GetExtension_NullString_ReturnsEmptyString()
         {
             // Arrange
             string nullString = null;
@@ -33,7 +33,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithInvalidFileName_GetExtension_ReturnsEmptyString()
+        public void GetExtension_FileNameWithNoExtension_ReturnsEmptyString()
         {
             // Arrange
             string invalidFilename = "test-filename.";
@@ -46,7 +46,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithValidFileName_GetExtension_ReturnsExtension()
+        public void GetExtension_ValidFileName_ReturnsExtension()
         {
             // Arrange
             string filename = "test-filename.txt";
@@ -59,10 +59,10 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void EmptyString_MimeType_ReturnsUnknownMimeType()
+        public void MimeType_EmptyString_ReturnsUnknownMimeType()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             string mimeType = emptyString.MimeType();
@@ -72,7 +72,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void NullString_MimeType_ReturnsUnknownMimeType()
+        public void MimeType_NullString_ReturnsUnknownMimeType()
         {
             // Arrange
             string nullString = null;
@@ -85,7 +85,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithInvalidFileName_MimeType_ReturnsUnknownMimeType()
+        public void MimeType_StringWithInvalidFileName_ReturnsUnknownMimeType()
         {
             // Arrange
             string invalidFilename = "test-filename.";
@@ -98,7 +98,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithValidFileName_MimeType_ReturnsMimeType()
+        public void MimeType_StringWithValidFileName_ReturnsMimeType()
         {
             // Arrange
             string filename = "test-filename.txt";
@@ -111,10 +111,10 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void EmptyString_GenerateGuidFileName_ReturnsEmptyString()
+        public void GenerateGuidFileNameEmptyString__ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             string fileName = emptyString.GenerateGuidFileName();
@@ -124,7 +124,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void NullString_GenerateGuidFileName_ReturnsEmptyString()
+        public void GenerateGuidFileName_NullString_ReturnsEmptyString()
         {
             // Arrange
             string nullString = null;
@@ -137,7 +137,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithInvalidFileName_GenerateGuidFileName_ReturnsEmptyString()
+        public void GenerateGuidFileName_StringWithInvalidFileName_ReturnsEmptyString()
         {
             // Arrange
             string invalidFilename = "test-filename.";
@@ -150,7 +150,7 @@ namespace Utilities.Tests.Utilities.Core.IO
         }
 
         [Test]
-        public void StringWithValidFileName_GenerateGuidFileName_ReturnsFileName()
+        public void GenerateGuidFileName_StringWithValidFileName_ReturnsFileName()
         {
             // Arrange
             string filename = "test-filename.txt";

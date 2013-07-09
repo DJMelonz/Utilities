@@ -8,7 +8,20 @@ namespace Utilities.Tests.Utilities.Core.DateTime
     public class DateTimeExtensionsTests
     {
         [Test]
-        public void DateTime_FirstDayOfWeek_ReturnsDateTime()
+        public void FirstDayOfWeek_DateTime_ReturnsDateTime()
+        {
+            // Arrange
+            System.DateTime date = new System.DateTime(2013, 1, 1);
+
+            // Act
+            System.DateTime result = date.FirstDayOfWeek();
+
+            // Assert
+            Assert.AreEqual(new System.DateTime(2012, 12, 31), result);
+        }
+
+        [Test]
+        public void FirstDayOfWeek_DateTime_ReturnsCorrectDayOfWeek()
         {
             // Arrange
             System.DateTime date = new System.DateTime(2013, 1, 1);
@@ -18,11 +31,23 @@ namespace Utilities.Tests.Utilities.Core.DateTime
 
             // Assert
             Assert.AreEqual(DayOfWeek.Monday, result.DayOfWeek);
-            Assert.AreEqual(new System.DateTime(2012, 12, 31), result);
         }
 
         [Test]
-        public void DateTime_FirstDayOfMonth_ReturnsDateTime()
+        public void FirstDayOfMonth_DateTime_ReturnsDateTime()
+        {
+            // Arrange
+            System.DateTime date = new System.DateTime(2013, 1, 15);
+
+            // Act
+            System.DateTime result = date.FirstDayOfMonth();
+
+            // Assert
+            Assert.AreEqual(new System.DateTime(2013, 1, 1), result);
+        }
+
+        [Test]
+        public void FirstDayOfMonth_DateTime_ReturnsCorrectDayOfWeek()
         {
             // Arrange
             System.DateTime date = new System.DateTime(2013, 1, 15);
@@ -32,11 +57,23 @@ namespace Utilities.Tests.Utilities.Core.DateTime
 
             // Assert
             Assert.AreEqual(DayOfWeek.Tuesday, result.DayOfWeek);
-            Assert.AreEqual(new System.DateTime(2013, 1, 1), result);
         }
 
         [Test]
-        public void DateTime_LastDayOfMonth_ReturnsDateTime()
+        public void LastDayOfMonth_DateTime_ReturnsDateTime()
+        {
+            // Arrange
+            System.DateTime date = new System.DateTime(2013, 1, 15);
+
+            // Act
+            System.DateTime result = date.LastDayOfMonth();
+
+            // Assert
+            Assert.AreEqual(new System.DateTime(2013, 1, 31), result);
+        }
+
+        [Test]
+        public void LastDayOfMonth_DateTime_ReturnsCorrectDayOfWeek()
         {
             // Arrange
             System.DateTime date = new System.DateTime(2013, 1, 15);
@@ -46,11 +83,10 @@ namespace Utilities.Tests.Utilities.Core.DateTime
 
             // Assert
             Assert.AreEqual(DayOfWeek.Thursday, result.DayOfWeek);
-            Assert.AreEqual(new System.DateTime(2013, 1, 31), result);
         }
 
         [Test]
-        public void DateTime_ToIso8601_ReturnsString()
+        public void ToIso8601_DateTime_ReturnsString()
         {
             // Arrange
             System.DateTime date = new System.DateTime(2013, 1, 15, 23, 59, 01);
@@ -63,7 +99,7 @@ namespace Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void DateTime_BusinessHoursSince_ReturnsTimeSpan()
+        public void BusinessHoursSince_DateTime_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime date = System.DateTime.Now.AddHours(-1);
@@ -76,7 +112,7 @@ namespace Utilities.Tests.Utilities.Core.DateTime
         }
          
         [Test]
-        public void DateTimeOutOfBusinessHours_BusinessHoursBetween_ReturnsTimeSpanZero()
+        public void BusinessHoursBetween_DateTimeOutOfBusinessHours_ReturnsTimeSpanZero()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 21, 0, 0);
@@ -90,7 +126,7 @@ namespace Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void StartDateTimeBeforeBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void BusinessHoursBetween_StartDateTimeBeforeBusinessHours_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 21, 0, 0);
@@ -104,7 +140,7 @@ namespace Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void EndDateTimeAfterBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void BusinessHoursBetween_EndDateTimeAfterBusinessHours_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 17, 0, 0);
@@ -118,7 +154,7 @@ namespace Utilities.Tests.Utilities.Core.DateTime
         }
 
         [Test]
-        public void DateTimeInsideBusinessHours_BusinessHoursBetween_ReturnsTimeSpan()
+        public void BusinessHoursBetween_DateTimeInsideBusinessHours_ReturnsTimeSpan()
         {
             // Arrange
             System.DateTime startDate = new System.DateTime(2013, 1, 1, 09, 0, 0);

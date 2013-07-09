@@ -9,7 +9,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
     public class PercentageExtensionsTests
     {
         [Test]
-        public void NullListOfInts_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_NullListOfInts_ReturnsEmptyList()
         {
             // Arrange
             List<int> nullList = null;
@@ -22,7 +22,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void EmptyListOfInts_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_EmptyListOfInts_ReturnsEmptyList()
         {
             // Arrange
             List<int> emptyList = new List<int>(0);
@@ -35,7 +35,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfIntsWithZero_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfIntsWithZero_ReturnsEmptyList()
         {
             // Arrange
             List<int> listWithZero = new List<int> { 0 };
@@ -48,7 +48,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfIntsWithZeros_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfIntsWithZeros_ReturnsEmptyList()
         {
             // Arrange
             List<int> listWithZeros = new List<int> { 0, 0, 0 };
@@ -61,7 +61,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfIntsContainingZero_AsPercentages_ReturnsList()
+        public void AsPercentages_ListOfIntsContainingZero_ReturnsList()
         {
             // Arrange
             List<int> listContainingZero = new List<int> { 0, 2, 2 };
@@ -74,7 +74,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfInts_AsPercentages_ReturnsList()
+        public void AsPercentages_ListOfInts_ReturnsList()
         {
             // Arrange
             List<int> list1 = new List<int> { 1, 2, 3, 4 };
@@ -91,7 +91,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
 
 
         [Test]
-        public void NullListOfLongs_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_NullListOfLongs_ReturnsEmptyList()
         {
             // Arrange
             List<long> nullList = null;
@@ -104,7 +104,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void EmptyListOfLongs_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_EmptyListOfLongs_ReturnsEmptyList()
         {
             // Arrange
             List<long> emptyList = new List<long>(0);
@@ -117,7 +117,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfLongsWithZero_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfLongsWithZero_ReturnsEmptyList()
         {
             // Arrange
             List<long> listWithZero = new List<long> { 0L };
@@ -130,7 +130,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfLongsWithZeros_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfLongsWithZeros_ReturnsEmptyList()
         {
             // Arrange
             List<long> listWithZeros = new List<long> { 0L, 0L, 0L };
@@ -143,7 +143,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfLongsContainingZero_AsPercentages_ReturnsList()
+        public void AsPercentages_ListOfLongsContainingZero_ReturnsList()
         {
             // Arrange
             List<long> listContainingZero = new List<long> { 0L, 2L, 2L };
@@ -156,7 +156,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfLongs_AsPercentages_ReturnsList()
+        public void AsPercentagesListOfLongs__ReturnsList()
         {
             // Arrange
             List<long> list1 = new List<long> { 1L, 2L, 3L, 4L };
@@ -173,7 +173,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
 
 
         [Test]
-        public void NullListOfDoubles_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_NullListOfDoubles_ReturnsEmptyList()
         {
             // Arrange
             List<double> nullList = null;
@@ -186,7 +186,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void EmptyListOfDoubles_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_EmptyListOfDoubles_ReturnsEmptyList()
         {
             // Arrange
             List<double> emptyList = new List<double>(0);
@@ -199,7 +199,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfDoublesWithZero_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfDoublesWithZero_ReturnsEmptyList()
         {
             // Arrange
             List<double> listWithZero = new List<double> { 0D };
@@ -212,7 +212,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfDoublesWithZeros_AsPercentages_ReturnsEmptyList()
+        public void AsPercentages_ListOfDoublesWithZeros_ReturnsEmptyList()
         {
             // Arrange
             List<double> listWithZeros = new List<double> { 0D, 0D, 0D };
@@ -225,7 +225,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfDoublesContainingZero_AsPercentages_ReturnsList()
+        public void AsPercentages_ListOfDoublesContainingZero_ReturnsList()
         {
             // Arrange
             List<double> listContainingZero = new List<double> { 0D, 2D, 2D };
@@ -238,7 +238,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ListOfDoubles_AsPercentages_ReturnsList()
+        public void AsPercentages_ListOfDoubles_ReturnsList()
         {
             // Arrange
             List<double> list1 = new List<double> { 1D, 2D, 3D, 4D };

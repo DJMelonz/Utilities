@@ -7,7 +7,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
     public class IntExtensionsTests
     {
         [Test]
-        public void ZeroInt_IsNullOrZero_ReturnsTrue()
+        public void IsNullOrZero_ZeroInt_ReturnsTrue()
         {
             // Arrange
             int? nullInt = 0;
@@ -20,7 +20,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void NullInt_IsNullOrZero_ReturnsTrue()
+        public void IsNullOrZero_NullInt_ReturnsTrue()
         {
             // Arrange
             int? nullInt = null;
@@ -33,7 +33,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void IntWithValue_IsNullOrZero_ReturnsFalse()
+        public void IsNullOrZero_IntWithValue_ReturnsFalse()
         {
             // Arrange
             int? nonNullInt = 1;
@@ -46,7 +46,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void ZeroInt_IsNotNullOrZero_ReturnsFalse()
+        public void IsNotNullOrZero_ZeroInt_ReturnsFalse()
         {
             // Arrange
             int? nullInt = 0;
@@ -59,7 +59,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void NullInt_IsNotNullOrZero_ReturnsFalse()
+        public void IsNotNullOrZero_NullInt_ReturnsFalse()
         {
             // Arrange
             int? nullInt = null;
@@ -72,7 +72,7 @@ namespace Utilities.Tests.Utilities.Core.Numbers
         }
 
         [Test]
-        public void IntWithValue_IsNotNullOrZero_ReturnsTrue()
+        public void IsNotNullOrZero_IntWithValue_ReturnsTrue()
         {
             // Arrange
             int? nonNullInt = 1;

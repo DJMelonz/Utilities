@@ -7,10 +7,10 @@ namespace Utilities.Tests.Utilities.Web.Email
     public class EmailExtensionsTests
     {
         [Test]
-        public void EmptyString_IsValidEmail_ReturnsFalse()
+        public void IsValidEmail_EmptyString_ReturnsFalse()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             bool isValid = emptyString.IsValidEmail();
@@ -20,7 +20,7 @@ namespace Utilities.Tests.Utilities.Web.Email
         }
 
         [Test]
-        public void NullString_IsValidEmail_ReturnsFalse()
+        public void IsValidEmail_NullString_ReturnsFalse()
         {
             // Arrange
             string nullString = null;
@@ -33,7 +33,7 @@ namespace Utilities.Tests.Utilities.Web.Email
         }
 
         [Test]
-        public void InvalidEmail_IsValidEmail_ReturnsFalse()
+        public void IsValidEmail_InvalidEmails_ReturnsFalse()
         {
             // Arrange
             string invalidEmail1 = "test";
@@ -61,7 +61,7 @@ namespace Utilities.Tests.Utilities.Web.Email
         }
 
         [Test]
-        public void ValidEmail_IsValidEmail_ReturnsTrue()
+        public void IsValidEmail_ValidEmails_ReturnsTrue()
         {
             // Arrange
             string validEmail1 = "test@test.com";

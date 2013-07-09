@@ -8,10 +8,10 @@ namespace Utilities.Tests.Utilities.Core.Text
     public class StringExtensionsTests
     {
         [Test]
-        public void EmptyString_IsEmpty_ReturnsTrue()
+        public void IsEmpty_WithEmptyString_ReturnsTrue()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             bool isEmpty = emptyString.IsEmpty();
@@ -21,7 +21,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void NullString_IsEmpty_ReturnsTrue()
+        public void IsEmpty_NullString_ReturnsTrue()
         {
             // Arrange
             string nullString = null;
@@ -34,7 +34,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void NonEmptyString_IsEmpty_ReturnsFalse()
+        public void IsEmpty_NonEmptyString_ReturnsFalse()
         {
             // Arrange
             string nonEmptyString = "Test String";
@@ -47,10 +47,10 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void EmptyString_IsNotEmpty_ReturnsFalse()
+        public void IsNotEmpty_EmptyString_ReturnsFalse()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             bool isEmpty = emptyString.IsNotEmpty();
@@ -60,7 +60,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void NonEmptyString_IsNotEmpty_ReturnsTrue()
+        public void IsNotEmpty_NonEmptyString_ReturnsTrue()
         {
             // Arrange
             string nonEmptyString = "Test String";
@@ -73,82 +73,146 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void EmptyString_IsNotEmptyAndEqualTo_ReturnsFalse()
+        public void IsNotEmptyAndEqualTo_EmptyStringAndNonEmptyEqualValue_ReturnsFalse()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
+            string equalValue = "Test String";
 
             // Act
-            bool isEmpty = emptyString.IsNotEmptyAndEqualTo("Test String");
-            bool isEmptyWithNoEqualValue = emptyString.IsNotEmptyAndEqualTo("");
-            bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyAndEqualTo(null);
+            bool isEmpty = emptyString.IsNotEmptyAndEqualTo(equalValue);
 
             // Assert
             Assert.IsFalse(isEmpty);
+        }
+
+        [Test]
+        public void IsNotEmptyAndEqualTo_EmptyStringAndEmptyEqualValue_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = string.Empty;
+            string equalValue = string.Empty;
+
+            // Act
+            bool isEmptyWithNoEqualValue = emptyString.IsNotEmptyAndEqualTo(equalValue);
+
+            // Assert
             Assert.IsFalse(isEmptyWithNoEqualValue);
+        }
+
+        [Test]
+        public void IsNotEmptyAndEqualTo_EmptyStringAndNullEqualValue_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = string.Empty;
+            string equalValue = null;
+
+            // Act
+            bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyAndEqualTo(equalValue);
+
+            // Assert
             Assert.IsFalse(isEmptyWithNullEqualValue);
         }
 
         [Test]
-        public void NonEmptyString_IsNotEmptyAndEqualTo_ReturnsTrue()
+        public void IsNotEmptyAndEqualTo_NonEmptyStringAndNonEmptyEqualValue_ReturnsTrue()
         {
             // Arrange
             string nonEmptyString = "Test String";
+            string equalValue = "Test String";
 
             // Act
-            bool isNotEmpty = nonEmptyString.IsNotEmptyAndEqualTo("Test String");
+            bool isNotEmpty = nonEmptyString.IsNotEmptyAndEqualTo(equalValue);
 
             // Assert
             Assert.IsTrue(isNotEmpty);
         }
 
         [Test]
-        public void EmptyString_IsNotEmptyOrEqualTo_ReturnsFalse()
+        public void IsNotEmptyOrEqualTo_EmptyStringAndNonEmptyEqualValue_ReturnsFalse()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
+            string equalValue = "Test String";
 
             // Act
-            bool isEmpty = emptyString.IsNotEmptyOrEqualTo("Test String");
-            bool isEmptyWithNoEqualValue = emptyString.IsNotEmptyOrEqualTo("");
-            bool isEmptyWithNullEqualValue = emptyString.IsNotEmptyOrEqualTo(null);
+            bool isEmpty = emptyString.IsNotEmptyOrEqualTo(equalValue);
 
             // Assert
             Assert.IsFalse(isEmpty);
-            Assert.IsFalse(isEmptyWithNoEqualValue);
-            Assert.IsFalse(isEmptyWithNullEqualValue);
         }
 
         [Test]
-        public void NonEmptyString_IsNotEmptyOrEqualTo_ReturnsTrue()
+        public void IsNotEmptyOrEqualTo_EmptyStringAndEmptyEqualValue_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = string.Empty;
+            string equalValue = string.Empty;
+
+            // Act
+            bool isEmptyWithNoEqualValue = emptyString.IsNotEmptyOrEqualTo(equalValue);
+
+            // Assert
+            Assert.IsFalse(isEmptyWithNoEqualValue);
+        }
+
+        [Test]
+        public void IsNotEmptyOrEqualTo_EmptyStringAndNullEqualValue_ReturnsFalse()
+        {
+            // Arrange
+            string emptyString = string.Empty;
+            string equalValue = null;
+
+            // Act
+            bool isEmpty = emptyString.IsNotEmptyOrEqualTo(equalValue);
+
+            // Assert
+            Assert.IsFalse(isEmpty);
+        }
+
+        [Test]
+        public void IsNotEmptyOrEqualTo_NonEmptyStringAndNonEmptyMatchingEqualValue_ReturnsFalse()
         {
             // Arrange
             string nonEmptyString = "Test String";
+            string equalValue = "Test String";
 
             // Act
-            bool isNotEmptyWithMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo("Test String");
-            bool isNotEmptyWithNonMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo("Non Matching Test String");
+            bool isNotEmptyWithMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo(equalValue);
 
             // Assert
             Assert.IsFalse(isNotEmptyWithMatchingValue);
+        }
+
+        [Test]
+        public void IsNotEmptyOrEqualTo_NonEmptyStringAndNonEmptyNonMatchingEqualValue_ReturnsTrue()
+        {
+            // Arrange
+            string nonEmptyString = "Test String";
+            string equalValue = "Non Matching Test String";
+
+            // Act
+            bool isNotEmptyWithNonMatchingValue = nonEmptyString.IsNotEmptyOrEqualTo(equalValue);
+
+            // Assert
             Assert.IsTrue(isNotEmptyWithNonMatchingValue);
         }
 
         [Test]
-        public void EmptyString_Truncate_ReturnsEmptyString()
+        public void Truncate_EmptyString_ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             string truncated = emptyString.Truncate();
 
             // Assert
-            Assert.AreEqual("", truncated);
+            Assert.AreEqual(string.Empty, truncated);
         }
 
         [Test]
-        public void NullString_Truncate_ReturnsEmptyString()
+        public void Truncate_NullString_ReturnsEmptyString()
         {
             // Arrange
             string nullString = null;
@@ -157,11 +221,11 @@ namespace Utilities.Tests.Utilities.Core.Text
             string truncated = nullString.Truncate();
 
             // Assert
-            Assert.AreEqual("", truncated);
+            Assert.AreEqual(string.Empty, truncated);
         }
 
         [Test]
-        public void NonEmptyString_Truncate_ReturnsTruncatedString()
+        public void Truncate_NonEmptyString_ReturnsTruncatedString()
         {
             // Arrange
             string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
@@ -171,11 +235,10 @@ namespace Utilities.Tests.Utilities.Core.Text
 
             // Assert
             Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, mas ...", truncated);
-            Assert.AreEqual(79, truncated.Length);
         }
 
         [Test]
-        public void NonEmptyString_TruncateWithLength_ReturnsTruncatedString()
+        public void Truncate_StringWithTruncateLength_ReturnsTruncatedString()
         {
             // Arrange
             string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, ligula tellus sollicitudin neque, ut pretium risus neque vitae diam.";
@@ -185,57 +248,73 @@ namespace Utilities.Tests.Utilities.Core.Text
 
             // Assert
             Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus, massa quis mattis mollis, li ...", truncated);
-            Assert.AreEqual(104, truncated.Length);
         }
 
         [Test]
-        public void EmptyStringPassingEmptyString_With_ReturnsEmptyString()
+        public void Truncate_StringWithTruncateLengthLongerThanString_ReturnsString()
         {
             // Arrange
-            string emptyString = "";
+            string stringToTruncate = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
             // Act
-            string result = emptyString.With("");
+            string truncated = stringToTruncate.Truncate(100);
 
             // Assert
-            Assert.AreEqual("", result);
+            Assert.AreEqual("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", truncated);
         }
 
         [Test]
-        public void NullStringPassingNonEmptyString_With_ThrowsArgumentNullException()
+        public void With_EmptyStringPassingEmptyString_ReturnsEmptyString()
+        {
+            // Arrange
+            string emptyString = string.Empty;
+            string[] withValues = new[] { string.Empty };
+
+            // Act
+            string result = emptyString.With(withValues);
+
+            // Assert
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [Test]
+        public void With_NullStringPassingNonEmptyString_ThrowsArgumentNullException()
         {
             // Arrange
             string nullString = null;
+            string[] withValues = new[] { "value1", "value2" };
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => nullString.With("value1", "value2"));
+            Assert.Throws<ArgumentNullException>(() => nullString.With(withValues));
         }
 
         [Test]
-        public void StringPassingNullString_With_ThrowsArgumentNullException()
+        public void With_StringPassingNullString_ThrowsArgumentNullException()
         {
             // Arrange
             string validString = "Sphinx of black {0}, judge my {1}.";
+            string[] withValues = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => validString.With(null));
+            Assert.Throws<ArgumentNullException>(() => validString.With(withValues));
         }
 
         [Test]
-        public void EmptyStringPassingArguments_With_ReturnsEmptyString()
+        public void With_EmptyStringPassingArguments_ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
+            string[] withValues = new[] { "value1", "value2" };
 
             // Act
-            string result = emptyString.With("value1", "value2");
+            string result = emptyString.With(withValues);
 
             // Assert
-            Assert.AreEqual("", result);
+            Assert.AreEqual(string.Empty, result);
         }
 
         [Test]
-        public void StringPassingNoArguments_With_ThrowsFormatException()
+        public void With_StringPassingNoArguments_ThrowsFormatException()
         {
             // Arrange
             string validString = "Sphinx of black {0}, judge my {1}.";
@@ -245,43 +324,45 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void StringPassingIncorrectNumberOfArguments_With_ThrowsFormatException()
+        public void With_StringPassingIncorrectNumberOfArguments_ThrowsFormatException()
         {
             // Arrange
             string validString = "Sphinx of black {0}, judge my {1}.";
+            string[] withValues = new[] { "quartz" };
 
             // Act & Assert
-            Assert.Throws<FormatException>(() => validString.With("quartz"));
+            Assert.Throws<FormatException>(() => validString.With(withValues));
         }
 
         [Test]
-        public void StringPassingCorrectNumberOfArguments_With_ReturnsString()
+        public void With_StringPassingCorrectNumberOfArguments_ReturnsString()
         {
             // Arrange
             string validString = "Sphinx of black {0}, judge my {1}.";
+            string[] withValues = new[] { "quartz", "vow" };
 
             // Act
-            string result = validString.With("quartz", "vow");
+            string result = validString.With(withValues);
 
             // Assert
             Assert.AreEqual("Sphinx of black quartz, judge my vow.", result);
         }
 
         [Test]
-        public void EmptyString_ToSlug_ReturnsEmptyString()
+        public void ToSlug_EmptyString_ReturnsEmptyString()
         {
             // Arrange
-            string emptyString = "";
+            string emptyString = string.Empty;
 
             // Act
             string result = emptyString.ToSlug();
 
             // Assert
-            Assert.AreEqual("", result);
+            Assert.AreEqual(string.Empty, result);
         }
 
         [Test]
-        public void NullString_ToSlug_ReturnsEmptyString()
+        public void ToSlug_NullString_ReturnsEmptyString()
         {
             // Arrange
             string nullString = null;
@@ -290,11 +371,11 @@ namespace Utilities.Tests.Utilities.Core.Text
             string result = nullString.ToSlug();
 
             // Assert
-            Assert.AreEqual("", result);
+            Assert.AreEqual(string.Empty, result);
         }
 
         [Test]
-        public void StringWithPunctuation_ToSlug_ReturnsFormattedString()
+        public void ToSlug_StringWithPunctuation_ReturnsFormattedString()
         {
             // Arrange
             string punctuatedString = "Sphinx of black quartz, judge my vow.";
@@ -307,7 +388,7 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void StringWithExcessiveDashes_ToSlug_ReturnsFormattedString()
+        public void ToSlug_StringWithExcessiveDashes_ReturnsFormattedString()
         {
             // Arrange
             string excessivelyDashedString = "Sphinx - of -- black quartz, --- judge my vow.-";
@@ -320,7 +401,20 @@ namespace Utilities.Tests.Utilities.Core.Text
         }
 
         [Test]
-        public void StringWithPunctuationAndTruncateValue_ToSlug_ReturnsTruncatedFormattedString()
+        public void ToSlug_StringWithPunctuationAndTruncateValue_ReturnsTruncated()
+        {
+            // Arrange
+            string punctuatedString = "Sphinx of black quartz, judge my vow.";
+
+            // Act
+            string result = punctuatedString.ToSlug(15);
+
+            // Assert
+            Assert.AreEqual(15, result.Length);
+        }
+
+        [Test]
+        public void ToSlug_StringWithPunctuationAndTruncateValue_ReturnsFormattedString()
         {
             // Arrange
             string punctuatedString = "Sphinx of black quartz, judge my vow.";
@@ -330,11 +424,23 @@ namespace Utilities.Tests.Utilities.Core.Text
 
             // Assert
             Assert.AreEqual("sphinx-of-black", result);
+        }
+
+        [Test]
+        public void ToSlug_StringWithPunctuationAndTruncateValueEndingOnSpace_ReturnsTruncated()
+        {
+            // Arrange
+            string punctuatedString = "Sphinx of black quartz, judge my vow.";
+
+            // Act
+            string result = punctuatedString.ToSlug(16);
+
+            // Assert
             Assert.AreEqual(15, result.Length);
         }
 
         [Test]
-        public void StringWithPunctuationAndTruncateValueEndingOnSpace_ToSlug_ReturnsTruncatedFormattedString()
+        public void ToSlug_StringWithPunctuationAndTruncateValueEndingOnSpace_ReturnsFormattedString()
         {
             // Arrange
             string punctuatedString = "Sphinx of black quartz, judge my vow.";
@@ -344,7 +450,6 @@ namespace Utilities.Tests.Utilities.Core.Text
 
             // Assert
             Assert.AreEqual("sphinx-of-black", result);
-            Assert.AreEqual(15, result.Length);
         }
     }
 }
