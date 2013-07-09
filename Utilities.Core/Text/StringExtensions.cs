@@ -72,7 +72,7 @@ namespace Utilities.Core.Text
 
                 return input;
             }
-            return "";
+            return string.Empty;
         }
     }
 }
