@@ -30,7 +30,7 @@ namespace Utilities.Core.Text
             {
                 if (input.Length >= length)
                 {
-                    return string.Format("{0} ...", input.Substring(0, length));
+                    return "{0} ...".With(input.Substring(0, length));
                 }
                 return input;
             }
