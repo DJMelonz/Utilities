@@ -12,6 +12,13 @@ namespace Utilities.Core.DateTime
             return new System.DateTime(monday.Year, monday.Month, monday.Day);
         }
 
+        public static System.DateTime LastDayOfWeek(this System.DateTime input)
+        {
+            System.DateTime firstDayOfTheWeek = input.FirstDayOfWeek();
+
+            return firstDayOfTheWeek.AddDays(7).AddDays(-1);
+        }
+
         public static System.DateTime FirstDayOfMonth(this System.DateTime input)
         {
             return new System.DateTime(input.Year, input.Month, 1);

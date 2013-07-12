@@ -38,6 +38,36 @@ namespace Utilities.Core.DateTime.Tests
         }
 
         [TestFixture]
+        public class LastDayOfWeek
+        {
+            [Test]
+            public void LastDayOfWeek_DateTime_ReturnsDateTime()
+            {
+                // Arrange
+                System.DateTime date = new System.DateTime(2013, 1, 1);
+
+                // Act
+                System.DateTime result = date.LastDayOfWeek();
+
+                // Assert
+                Assert.AreEqual(new System.DateTime(2013, 01, 6), result);
+            }
+
+            [Test]
+            public void LastDayOfWeek_DateTime_ReturnsCorrectDayOfWeek()
+            {
+                // Arrange
+                System.DateTime date = new System.DateTime(2013, 1, 1);
+
+                // Act
+                System.DateTime result = date.LastDayOfWeek();
+
+                // Assert
+                Assert.AreEqual(DayOfWeek.Sunday, result.DayOfWeek);
+            }
+        }
+
+        [TestFixture]
         public class FirstDayOfMonth
         {
             [Test]
