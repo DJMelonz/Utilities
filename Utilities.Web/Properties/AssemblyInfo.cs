@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Utilities.Web")]
 [assembly: AssemblyDescription("System.Utilities.Web is a collection of helpers and extension methods for quickly solving and aiding with common .NET web related programming tasks.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Damian Mullins")]
 [assembly: AssemblyProduct("Utilities.Web")]
 [assembly: AssemblyCopyright("Copyright © Damian Mullins 2013")]
 [assembly: AssemblyTrademark("")]
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.1.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.1.0")]
