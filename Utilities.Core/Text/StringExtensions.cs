@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Utilities.Core.Text
 {
@@ -42,6 +43,7 @@ namespace Utilities.Core.Text
             return string.Format(input, args);
         }
 
+        [Obsolete("This method has been moved into the Utilities.Web library.")]
         public static string ToSlug(this string input, int? maxLength = null)
         {
             if (input.IsNotEmpty())
