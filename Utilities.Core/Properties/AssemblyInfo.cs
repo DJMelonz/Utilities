@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Utilities.Core")]
 [assembly: AssemblyDescription("System.Utilities.Core is a collection of helpers and extension methods for quickly solving and aiding with common .NET programming tasks.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Damian Mullins")]
 [assembly: AssemblyProduct("Utilities.Core")]
 [assembly: AssemblyCopyright("Copyright © Damian Mullins 2013")]
 [assembly: AssemblyTrademark("")]
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.11.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.11.0")]
