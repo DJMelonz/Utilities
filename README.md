@@ -10,4 +10,6 @@ You can add these utilities to your project via NuGet by running the following c
 
 This is an ongoing project, I will be adding methods as and when I need them.
 
+Check out the [wiki](https://github.com/DamianMullins/Utilities/wiki) for descriptions of the classes and their methods.
+
 [![endorse](https://api.coderwall.com/djmelonz/endorsecount.png)](https://coderwall.com/djmelonz)
