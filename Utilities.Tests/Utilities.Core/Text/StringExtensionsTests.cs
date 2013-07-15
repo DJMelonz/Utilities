@@ -2,7 +2,7 @@
 using System;
 using Utilities.Core.Text;
 
-namespace Utilities.Text.Tests
+namespace Utilities.Core.Text.Tests
 {
     [TestFixture, Explicit]
     [Category("String Extension Methods")]
