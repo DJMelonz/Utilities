@@ -5,6 +5,13 @@ namespace Utilities.Web.Url
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// Generate a friendly URL.
+        /// </summary>
+        /// <param name="input">The string to be converted.</param>
+        /// <param name="maxLength">Specify the maximum length of the URL (optional).</param>
+        /// <remarks>Konrad Rudolph: http://stackoverflow.com/q/37809#37880</remarks>
+        /// <returns></returns>
         public static string ToSlug(this string input, int? maxLength = null)
         {
             if (input.IsNotEmpty())
