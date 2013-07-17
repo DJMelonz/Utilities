@@ -22,6 +22,12 @@ namespace Utilities.Core.DateTime
 
         }
 
+        /// <summary>
+        /// Calculate the time within business hours between two DateTime objects.
+        /// </summary>
+        /// <param name="startDate">The start date.</param>
+        /// <param name="endDate">The end date.</param>
+        /// <returns>TimeSpan object.</returns>
         public TimeSpan Calculate(System.DateTime startDate, System.DateTime endDate)
         {
             var counter = startDate;
