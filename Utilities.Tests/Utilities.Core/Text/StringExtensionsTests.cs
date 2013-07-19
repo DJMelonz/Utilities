@@ -379,110 +379,84 @@ namespace Utilities.Core.Text.Tests
         }
 
         [TestFixture]
-        public class ToSlug
+        public class AddSpacesBetweenCaps
         {
             [Test]
-            public void ToSlug_EmptyString_ReturnsEmptyString()
+            public void AddSpacesBetweenCaps_EmptyString_ReturnsEmptyString()
             {
                 // Arrange
                 string emptyString = string.Empty;
 
                 // Act
-                string result = emptyString.ToSlug();
+                string result = emptyString.AddSpacesBetweenCaps();
 
                 // Assert
                 Assert.AreEqual(string.Empty, result);
             }
 
             [Test]
-            public void ToSlug_NullString_ReturnsEmptyString()
+            public void AddSpacesBetweenCaps_NullString_ReturnsEmptyString()
             {
                 // Arrange
                 string nullString = null;
 
                 // Act
-                string result = nullString.ToSlug();
+                string result = nullString.AddSpacesBetweenCaps();
 
                 // Assert
                 Assert.AreEqual(string.Empty, result);
             }
 
             [Test]
-            public void ToSlug_StringWithPunctuation_ReturnsFormattedString()
+            public void AddSpacesBetweenCaps_AllUppercaseString_ReturnsFormattedString()
             {
                 // Arrange
-                string punctuatedString = "Sphinx of black quartz, judge my vow.";
+                string allCaps = "LOREMIPSUMDOLOR";
 
                 // Act
-                string result = punctuatedString.ToSlug();
+                string result = allCaps.AddSpacesBetweenCaps();
 
                 // Assert
-                Assert.AreEqual("sphinx-of-black-quartz-judge-my-vow", result);
+                Assert.AreEqual("L O R E M I P S U M D O L O R", result);
             }
 
             [Test]
-            public void ToSlug_StringWithExcessiveDashes_ReturnsFormattedString()
+            public void AddSpacesBetweenCaps_AllLowercaseString_ReturnsString()
             {
                 // Arrange
-                string excessivelyDashedString = "Sphinx - of -- black quartz, --- judge my vow.-";
+                string allCaps = "lorem ipsum dolor";
 
                 // Act
-                string result = excessivelyDashedString.ToSlug();
+                string result = allCaps.AddSpacesBetweenCaps();
 
                 // Assert
-                Assert.AreEqual("sphinx-of-black-quartz-judge-my-vow", result);
+                Assert.AreEqual("lorem ipsum dolor", result);
             }
 
             [Test]
-            public void ToSlug_StringWithPunctuationAndTruncateValue_ReturnsTruncated()
+            public void AddSpacesBetweenCaps_StringWithSpaces_ReturnsFormattedStringWithExtraSpaces()
             {
                 // Arrange
-                string punctuatedString = "Sphinx of black quartz, judge my vow.";
+                string allCaps = "Lorem Ipsum Dolor";
 
                 // Act
-                string result = punctuatedString.ToSlug(15);
+                string result = allCaps.AddSpacesBetweenCaps();
 
                 // Assert
-                Assert.AreEqual(15, result.Length);
+                Assert.AreEqual("Lorem  Ipsum  Dolor", result);
             }
 
             [Test]
-            public void ToSlug_StringWithPunctuationAndTruncateValue_ReturnsFormattedString()
+            public void AddSpacesBetweenCaps_StringWithSpaces_ReturnsFormattedString()
             {
                 // Arrange
-                string punctuatedString = "Sphinx of black quartz, judge my vow.";
+                string allCaps = "LoremIpsumDolor";
 
                 // Act
-                string result = punctuatedString.ToSlug(15);
+                string result = allCaps.AddSpacesBetweenCaps();
 
                 // Assert
-                Assert.AreEqual("sphinx-of-black", result);
-            }
-
-            [Test]
-            public void ToSlug_StringWithPunctuationAndTruncateValueEndingOnSpace_ReturnsTruncated()
-            {
-                // Arrange
-                string punctuatedString = "Sphinx of black quartz, judge my vow.";
-
-                // Act
-                string result = punctuatedString.ToSlug(16);
-
-                // Assert
-                Assert.AreEqual(15, result.Length);
-            }
-
-            [Test]
-            public void ToSlug_StringWithPunctuationAndTruncateValueEndingOnSpace_ReturnsFormattedString()
-            {
-                // Arrange
-                string punctuatedString = "Sphinx of black quartz, judge my vow.";
-
-                // Act
-                string result = punctuatedString.ToSlug(16);
-
-                // Assert
-                Assert.AreEqual("sphinx-of-black", result);
+                Assert.AreEqual("Lorem Ipsum Dolor", result);
             }
         }
     }
