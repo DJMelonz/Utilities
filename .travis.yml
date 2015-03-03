@@ -1,5 +1,11 @@
 language: csharp
 solution: Utilities.sln
+install:
+  - nuget restore Utilities.sln
+  - nuget install NUnit.Runners -Version 2.6.2 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Utilities.sln
+  - mono ./testrunner/NUnit.Runners.2.6.2/tools/nunit-console.exe ./Utilities.Tests/bin/Release/Utilities.Tests.dll
 
 env:
  global:
