@@ -1,3 +1,7 @@
 language: csharp
 solution: Utilities.sln
 
+env:
+ global:
+  - EnableNuGetPackageRestore=true
+
