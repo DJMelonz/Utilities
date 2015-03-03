@@ -1,7 +1,8 @@
 language: csharp
 solution: Utilities.sln
+
 install:
-  - nuget restore Utilities.sln
+  - travis_retry nuget restore Utilities.sln
   - nuget install NUnit.Runners -Version 2.6.2 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release Utilities.sln
