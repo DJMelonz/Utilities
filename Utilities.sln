@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Core", "Utilities.Core\Utilities.Core.csproj", "{7ECD054B-C1AD-4940-B9EE-35146729C52F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Tests", "Utilities.Tests\Utilities.Tests.csproj", "{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C}"
@@ -41,8 +43,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8} = {66083CE5-9ACD-444E-982F-E4EEE6C2026C}
 		{7ECD054B-C1AD-4940-B9EE-35146729C52F} = {66083CE5-9ACD-444E-982F-E4EEE6C2026C}
 		{AA651DB8-DE75-42F8-89E8-4CD14FF2EF2C} = {7BB329E2-ABBD-4F86-9E35-EDBC3B46FF9B}
+		{97259AED-17FD-4927-B5F0-CA1C39EDE0E8} = {66083CE5-9ACD-444E-982F-E4EEE6C2026C}
 	EndGlobalSection
 EndGlobal
