@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/DamianMullins/Utilities.svg?branch=master)](https://travis-ci.org/DamianMullins/Utilities)
+[![NuGet version](https://badge.fury.io/nu/Utilities.Core.svg)](https://badge.fury.io/nu/Utilities.Core)
+[![NuGet version](https://badge.fury.io/nu/Utilities.Web.svg)](https://badge.fury.io/nu/Utilities.Web)
 
 # Utilities
 
