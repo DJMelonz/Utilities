@@ -1,15 +1,24 @@
 [![Build Status](https://travis-ci.org/DamianMullins/Utilities.svg?branch=master)](https://travis-ci.org/DamianMullins/Utilities)
-[![NuGet version](https://badge.fury.io/nu/Utilities.Core.svg)](https://badge.fury.io/nu/Utilities.Core)
-[![NuGet version](https://badge.fury.io/nu/Utilities.Web.svg)](https://badge.fury.io/nu/Utilities.Web)
 
 # Utilities
 
 Utilities is a collection of helpers and extension methods to aid with common .NET programming tasks.
 
-You can add these utilities to your project via NuGet by running the following commands in the package manager console 
+## Utilities.Core
 
-- Install-Package Utilities.Core
-- Install-Package Utilities.Web
+[![NuGet version](https://badge.fury.io/nu/Utilities.Core.svg)](https://badge.fury.io/nu/Utilities.Core)
+
+Add to your project by running the following in the package manager console 
+
+`Install-Package Utilities.Core`
+
+## Utilities.Web
+
+[![NuGet version](https://badge.fury.io/nu/Utilities.Web.svg)](https://badge.fury.io/nu/Utilities.Web)
+
+Add to your project by running the following in the package manager console 
+
+`Install-Package Utilities.Web`
 
 This is an ongoing project, I will be adding methods as and when I need them.
 
